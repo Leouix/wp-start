@@ -1,3 +1,9 @@
+.idea
+.env
+web/app/themes/bedrock-theme/node_modules/
+web/app/themes/bedrock-theme/package-lock.json
+web/app/themes/bedrock-theme/style.css.map
+
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
