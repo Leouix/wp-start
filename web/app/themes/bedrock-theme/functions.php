@@ -146,8 +146,20 @@ function bedrock_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+    wp_enqueue_style( 'bedrock-bootstrap-style', get_path_theme_modules() . '/bootstrap/dist/css/bootstrap.min.css', array(), _S_VERSION );
+
+    wp_enqueue_script( 'bedrock-bootstrap', get_path_theme_modules() . '/bootstrap/dist/js/bootstrap.bundle.min.js', array(), _S_VERSION, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'bedrock_theme_scripts' );
+
+/** Function return path to /node_modules theme directory
+ * @return string
+ */
+function get_path_theme_modules(): string {
+    return get_template_directory_uri() . '/node_modules';
+}
 
 /**
  * Implement the Custom Header feature.
